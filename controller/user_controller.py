@@ -1,4 +1,8 @@
 from app import app
-@app.route("/users/signup")
+from model.user_model import user_model
+obj = user_model()   
+
+@app.route("/users/getall")
 def signup():
-    return "This is the signup route"
+    def user_getall_controller():
+        return obj.user_getall_model()
